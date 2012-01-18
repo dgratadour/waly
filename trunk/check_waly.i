@@ -20,13 +20,17 @@ func check_waly(void)
   write,format="Haar reconstruction error : %f\n",
     sqrt(sum(abs(image-haarr)^2)/numberof(image));
   */
-
   // heu je sais pas trop comment ca marche ce denoising ... a voir ...
   imnoise  = image+random_n(dimsof(image))*max(image)/10.;
+  "1"
   denoise1 = waly_denoise_dwt2d(imnoise,percentile=0.3);
+  "2"
   denoise2 = waly_denoise_dwt2d(imnoise,threshold=0.3);
+  "3"
   denoise3 = waly_denoise_dwt2d(imnoise,ratio=0.3);
+  "4"
   denoise4 = waly_denoise_dwt2d(imnoise,hardCutOff=0.3);
+  "ok"
 }
 
 

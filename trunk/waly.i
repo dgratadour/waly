@@ -108,7 +108,10 @@ func waly_denoise_dwt2d(data,family=,order=,ns=,percentile=,threshold=,ratio=,ha
       else {
         if (hardCutOff != 0) {
           size = dimsof(waveCoeff)(2);
-          mask = roll(dist(size))/(size/2.) > hardCutOff;
+          // fixme : may need recentering using a roll
+          xx = ((indgen(size)/size)-0.5)(,-:1:size);
+          mask = sqrt(xx^2 + transpose(xx)^2) > hardCutOff;
+          //mask = roll(dist(size))/(size/2.) > hardCutOff;
         } else mask = 1.;
       }
     }

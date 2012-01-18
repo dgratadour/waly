@@ -1,9 +1,9 @@
 # these values filled in by    yorick -batch make.i
-Y_MAKEDIR=/home/brujo/yorick-2.2/relocate
-Y_EXE=/home/brujo/yorick-2.2/relocate/bin/yorick
+Y_MAKEDIR=/Applications/yorick
+Y_EXE=/Applications/yorick/bin/yorick
 Y_EXE_PKGS=
-Y_EXE_HOME=/home/brujo/yorick-2.2/relocate
-Y_EXE_SITE=/home/brujo/yorick-2.2/relocate
+Y_EXE_HOME=/Applications/yorick
+Y_EXE_SITE=/Applications/yorick
 
 # ----------------------------------------------------- optimization flags
 
@@ -22,9 +22,9 @@ OBJS=waly.o
 PKG_EXENAME=yorick
 
 # PKG_DEPLIBS=-Lsomedir -lsomelib   for dependencies of this package
-PKG_DEPLIBS=-lgsl -lgslcblas #-L/usr/lib64 
+PKG_DEPLIBS=-L/sw/lib -lgsl -lgslcblas #-L/usr/lib64 
 # set compiler (or rarely loader) flags specific to this package
-PKG_CFLAGS= -I/usr/include/gsl -DHAVE_GSL=1
+PKG_CFLAGS= -I/sw/include -DHAVE_GSL=1
 PKG_LDFLAGS=
 
 # list of additional package names you want in PKG_EXENAME
