@@ -1,0 +1,9 @@
+This is waly v. 0.1
+waly is the wavelet library for yorick
+for now waly is mostly wrappers to the gsl_wavelet library
+see check_waly.i for exemples of use
+first install libgsl and libgsl-dev package
+modify PKG_DEPLIBS and PKG_CFLAGS in makefile accordingly
+then yorick -batch make.i && make && make install
+have fun !
+
